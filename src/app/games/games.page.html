@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+      <!-- <ion-buttons slot="start"></ion-buttons> -->
+      <!-- <ion-button (click)="onAddGame()"></ion-button> -->
+    <ion-title>Games</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item *ngFor="let game of games" [routerLink]="['/games',game.id]">
+    <ion-avatar slot="start">
+      <ion-img [src]="game.imageUrl"></ion-img>
+    </ion-avatar>
+    <ion-label>{{ game.title }}</ion-label>
+  </ion-item>
+  </ion-list>
+
+</ion-content>

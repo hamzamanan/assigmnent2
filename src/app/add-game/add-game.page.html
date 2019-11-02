@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ADD GAME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [formGroup]="gameForm">
+    <ion-item>
+      <ion-label position="floating" >Title</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+          <ion-label position="floating">ImageUrl</ion-label>
+          <ion-input type="text" formControlName="imageUrl"></ion-input>
+    </ion-item>
+        <ion-item>
+            <ion-label position="floating" >Characters</ion-label>
+            <ion-input type="text" formControlName="gamenames"></ion-input>
+          </ion-item>
+            <ion-button (click)="onAddGame()">Add Game</ion-button>
+  </div>
+</ion-content>

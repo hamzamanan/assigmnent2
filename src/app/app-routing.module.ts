@@ -2,8 +2,22 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: '', redirectTo: 'games', pathMatch: 'full' },
+  { path: 'games',
+   
+  children: [
+    {
+      path: '',
+      loadChildren: './games/games.module#GamesPageModule'
+    },
+    {
+      path: ':gameId',
+      loadChildren: './games/game-detail/game-detail.module#GameDetailPageModule'
+    }
+  ]},
+ 
+  { path: 'add-game', loadChildren: './add-game/add-game.module#AddGamePageModule' }
+  
 ];
 
 @NgModule({
